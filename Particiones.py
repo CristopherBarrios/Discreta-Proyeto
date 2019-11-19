@@ -81,4 +81,18 @@ def gen_particiones(particiones, num, limit = False):
     }
 }
 
+function p(sum,largest): 
+    if largest==0: 
+        return 0 
+    if sum==0: 
+        return 1 
+    if sum<0: 
+        return 0
+    return p(sum, largest-1) + p(sum-largest, largest)
+
+    Otra manera de partir el número con una funcion recursiva
+
+
+Fuente: https://www.i-ciencias.com/pregunta/31123/como-puedo-explicar-esto-entero-particiones-funcion-de-la-recursividad
+
 """
