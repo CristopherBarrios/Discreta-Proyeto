@@ -10,41 +10,37 @@ Proyecto 1: Particion de un entero
 """
 
 #Son todas las posibles respuestas respecto al numkero 'k'
-particiones = [] 
+particiones = [[]]  #result
 num = 0
-particiones = gen_particiones(num)
-def print_particiones(particiones):
-    # Es lo que separa las respuesta
-    string_particiones = ''
-    for serie in particiones:
-        #Muestra la n cantidad de respuestas que sumados dan el numero "k"
+longitud = 0
+particiones = 0
+opcion = ""
 
-        #5 = 1 + 1 + 3
-        string_particiones += str(num) + ' = ' + ' + '.join([str(num) for num in serie]) + '\n'
-        print (string_particiones)
- 
-def order_particiones(particiones):
-    order_particiones = []
-    for serie in gen_particiones(num):
-        order_particiones.append(sorted(serie, reverse=True))
-        particiones = order_particiones
- 
-def gen_particiones(particiones, num, limit = False):
-    # Es cuanto el limite sea 0
-    if limit == False: limit = num
-        if num == 1:
-            yield [1]
-        elif num < 1:
-            yield []
-        else:
-            for x in range(min(num, limit), 0, -1):
-                if num == x: continue
-                for i in gen_particiones(num - x, x):
-                    i.append(x)
-                    yield i
+def particion(entero,longitud):
+    for i in range(len(entero)):
+            for j in range(longitud):
+                if(i - j < 0):
+                    particiones [i,j] = particiones [i,j -1]
+                else:
+                    particiones [i,j] = particiones [i,j -1] + particiones[i - j, j]
+    return particiones[entero,longitud]
 
+def imprimir_particiones(numero, objetivo):
+    for x in :
+        pass
+    pass
+print("Proyecto de discreta - Particion de un entero \n" + "Integrantes: Mario Perdomo 18029\nJosue Sagastume 18173\nChristopher Barrios 18207")
+while(opcion != "2"):
+    opcion = input("1. Particion de un entero\n2. Salir")
+    if(opcion == "1"):
+        num = int(input("Ingrese el numero entero a partir: "))
+        longitud = int(input("Ingrese la longitud de las particiones(escriba 0 para todas las particiones): "))
+
+    elif(opcion == "2"):
+        print("nucnadadad")
 
 """
+
  public class IntegerPartition
 {
     public static int[,] Result = new int[100,100];
